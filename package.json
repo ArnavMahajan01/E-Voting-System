@@ -1,0 +1,19 @@
+{
+  "name": "timesheet",
+  "version": "1.0.0",
+  "description": "Escape Velocity by HTML5 UP\r html5up.net | @ajlkn\r Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arnav Mahajan",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "logger": "0.0.1",
+    "mysql": "^2.18.1",
+    "util": "^0.12.3",
+    "winston": "^3.3.3"
+  }
+}

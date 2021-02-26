@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<!--
+	Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Escape Velocity by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header" class="wrapper">
+
+					<!-- Logo -->
+						<div id="logo">
+							<h1><a href="index.html">TimeSheet</a></h1>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li class="current"><a href="index.html">Home</a></li>
+								<li><a href="#">Timesheet</a></li>
+								<li><a href="login.html">Login</a></li>
+								<li><a href="signup.html">Signup</a></li>
+							</ul>
+						</nav>
+
+				</section>
+
+            <!-- Intro -->
+				<section id="intro" class="wrapper style1">
+                    <div class="title">The Introduction</div>
+                    
+                    <div class="container">
+                        <p class="style2">
+							Timesheet is a task management systerm<br class="mobile-hide" />
+							designed by <a href="http://html5up.net" class="nobr">ARNAV MAHAJAN</a>
+						</p>
+                    </div>
+                    
+                </section>
+                
+                <section id="main" class="wrapper style2">
+					<div class="title">The Timesheet</div>
+					<div class="container" style="overflow-x:auto;">
+                        <form action="" method="POST">
+                            <table class="table table-striped table-hover table-bordered" id="tasks" >
+                                <thead>
+                                <tr>
+                                    <th scope="col">Select</th>
+                                    <th scope="col">Task Description</th>
+                                    <th scope="col">Client</th>
+                                    <th scope="col">Actual Task</th>
+                                    <th scope="col">Start Time</th>
+                                    <th scope="col">End Time</th>
+                                    <th scope="col">Total Hours</th>
+                                    <th scope="col">Manager Remarks</th>
+                                    <th scope="col">Manager Submission</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td scope="row">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="date" id="birthdaytime" name="birthdaytime">
+                                    </td>
+                                    <td>
+                                        <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                                    </td>
+                                    <td>@mdo</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                                    </td>
+                                    <td>
+                                        <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                                    </td>
+                                    <td>@mdo</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                                    </td>
+                                    <td>
+                                        <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                                    </td>
+                                    <td>@mdo</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                                    </td>
+                                    <td>
+                                        <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                                    </td>
+                                    <td>@mdo</td>
+                                    <td>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </section>
+
+			
+		</div>
+
+		<!-- Scripts -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+			
+			<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+
+
+			<script>
+				$(document).ready(function() {
+					$('#tasks').DataTable({
+                        columnDefs: [
+                            { targets: 1, width: 500}
+                            
+                        ]
+                    })
+				} );
+			</script>
+
+	</body>
+</html>
