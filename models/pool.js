@@ -7,7 +7,7 @@ const pool  = mysql.createPool({
     host            : 'localhost',
     user            : 'root',
     password        : '',
-    database        : 'timesheet'
+    database        : 'voting_system'
 });
 
 pool.getConnection((err, connection) => {

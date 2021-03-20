@@ -8,10 +8,17 @@
     <!-- Nav -->
         <nav id="nav">
             <ul>
-                <li class="current"><a href="index.html">Home</a></li>
-                <li><a href="#">Voting System</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/signup">Signup</a></li>
+                    <li class="current"><a href="/">Home</a></li>
+                    <li><a href="#">Voting System</a></li>
+                <% if(loc_user_name){ %>
+                    <li><a href="#">Hi <%= loc_user_name %></a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    <li><a href="/change_password">Change Password</a></li>
+                <% }else{ %>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/signup">Signup</a></li>
+                <% }%>
+                    
             </ul>
         </nav>
 
