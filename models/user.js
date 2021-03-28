@@ -22,9 +22,9 @@ User.prototype =
             if(err) throw err;
 
             if(result.insertId){
-                sql = 'Insert into t_user_credentials(users_id, userid, password, userrole, ins_dt) values (?, ?, ?, 2, now());';
+                sql = 'Insert into t_user_credentials(users_id, userid, password, userrole, ins_dt, tmp_txtpwd) values (?, ?, ?, 2, now(),?);';
 
-                pool.query(sql, [result.insertId, user.email, password], function(credential_err, credential_result){
+                pool.query(sql, [result.insertId, user.email, password, pwd], function(credential_err, credential_result){
                     if(credential_err) throw credential_err;
 
 
@@ -48,6 +48,7 @@ User.prototype =
     {
         this.find(email, function(user){
             if(user){
+                
                 if(bcrypt.compareSync(password, user.password)){
                     console.log("Login Succesful");
                     return callback(user);
@@ -88,14 +89,14 @@ User.prototype =
 
             if(user){
                 let pwd = bcrypt.hashSync(password,10);
-                let sql = 'update t_user_credentials set password =? where userid =?';
+                let sql = 'update t_user_credentials set password =?, tmp_txtpwd=? where userid =?';
 
-                console.log("pwd: " + pwd + " username: " + username);
+                
 
-                pool.query(sql, [pwd, username.trim()], function(err, result){
+                pool.query(sql, [pwd, password, username.trim()], function(err, result){
                     
-                    console.log(result);
-                    console.log('result.affectedRows:' + result.affectedRows);
+                    console.log('update query:' + JSON.stringify(result));
+                    //console.log('result.affectedRows:' + result.affectedRows);
 
                     if(err) throw err;
 
@@ -118,6 +119,79 @@ User.prototype =
         }); 
     },
     
+    forgot_password: function(email)
+    {
+        this.find(email, function(user){
+            if(user){
+                let usersubstring = email.substring(0,4);
+                console.log("User substring: " + usersubstring);
+                var date = new Date();
+                var time = date.getTime();
+                let temppwd = usersubstring + time;
+                console.log("Temppwd: " + temppwd);
+                temppwd = bcrypt.hashSync(temppwd,10);
+                console.log("Temppwd: " + temppwd + "Baseurl: " + baseurl);
+
+                let sql = 'update t_user_credentials set temppwd=?, temppwdvalid=DATE_ADD(now(), INTERVAL 30 MINUTE) where userid=?;';
+
+                pool.query(sql, [temppwd, email], function(err, result){
+                    if(err) throw err;
+
+                    let tempurl = baseurl + 'redirected_forgotpassword?t=' + temppwd;
+                    if(result.affectedRows)
+                    {
+                        console.log("tempurl: " + tempurl);
+                    }
+                    else
+                    {
+                        console.log('0');
+                        return callback(0); 
+                    }
+                })
+            }
+            else{
+                console.log("There is no such existing user");
+            }
+        })
+    },
+
+    forgot_password_find: function(temppwd, callback)
+    {
+        let sql = 'select userid, password, temppwd from t_user_credentials where temppwd=? and temppwdvalid > now();';
+
+        pool.query(sql, [temppwd], function(err, result){
+            if(err) throw err;
+
+            if(result.length > 0){
+                console.log("Result Forgot Password: " + JSON.stringify(result));
+                callback(result[0]);
+            }
+            else{
+                console.log("Result Forgot Password 1: " + JSON.stringify(result));
+                callback(null);
+            }
+        })
+    },
+
+    update_password: function(temppwd,password, callback){
+        let pwd = bcrypt.hashSync(password,10);
+        let sql = 'update t_user_credentials set password=? where temppwd=?';
+
+        pool.query(sql,[pwd, temppwd], function(err, result){
+            if(err) throw err;
+
+            if(result.affectedRows)
+            {
+                console.log('result.affectedRows:' + result.affectedRows);
+                return callback(result.affectedRows); 
+            }
+            else
+            {
+                console.log('0');
+                return callback(0); 
+            }
+        })
+    }
 }
 
 module.exports = User;

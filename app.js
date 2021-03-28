@@ -7,6 +7,8 @@ const cookieParser = require('cookie-parser');
 const util = require('util');
 var app = express();
 
+global.baseurl = 'http://localhost:3000/'
+
 app.use(express.urlencoded({extended:false}));
 
 app.set("views", path.join(__dirname, "views"));
